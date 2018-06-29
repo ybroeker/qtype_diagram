@@ -1,0 +1,11 @@
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/moodle/moodle.git"
+    }
+  ],
+  "require": {
+    "moodle/moodle": "v3.2.0"
+  }
+}

@@ -1,0 +1,48 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f794a44a0796a9f993ac9515d9981d29",
+    "packages": [
+        {
+            "name": "moodle/moodle",
+            "version": "v3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moodle/moodle.git",
+                "reference": "b182239f21c38ea57cddb41b0c03ef3eb02709f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moodle/moodle/zipball/b182239f21c38ea57cddb41b0c03ef3eb02709f8",
+                "reference": "b182239f21c38ea57cddb41b0c03ef3eb02709f8",
+                "shasum": ""
+            },
+            "require-dev": {
+                "moodlehq/behat-extension": "3.32.4",
+                "phpunit/dbunit": "1.4.*",
+                "phpunit/phpunit": "5.5.*"
+            },
+            "type": "project",
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "Moodle - the world's open source learning platform",
+            "homepage": "https://moodle.org",
+            "support": {
+                "source": "https://github.com/moodle/moodle/tree/v3.2.0"
+            },
+            "time": "2016-12-03T13:26:15+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
