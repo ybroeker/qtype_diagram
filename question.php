@@ -32,6 +32,8 @@ class qtype_diagram_question extends question_with_responses {
     public $graderinfo;
     public $graderinfoformat;
 
+    public $defaultanswer;
+
     public function make_behaviour(question_attempt $qa, $preferredbehaviour) {
         question_engine::load_behaviour_class('manualgraded');
         return new qbehaviour_manualgraded($qa, $preferredbehaviour);

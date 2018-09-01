@@ -7,4 +7,4 @@ $string['pluginname_link'] = 'question/type/diagram';
 $string['pluginnameadding'] = 'Diagram-Frage hinzufügen';
 $string['pluginnameediting'] = 'Diagram-Frage bearbeiten';
 $string['graderinfo'] = 'Bewertungshinweise';
-
+$string['default_diagram'] = 'Default diagram';
