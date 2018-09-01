@@ -46,18 +46,16 @@ class qtype_diagram_renderer extends qtype_renderer
         $step = $qa->get_last_step_with_qt_var('answer');
         if (!$step->has_qt_var('answer') && empty($options->readonly)) {
             // Question has never been answered, fill it with response template.
-            $step = new question_attempt_step(array('answer'=>$question->defaultanswer));
+            $step = new question_attempt_step(array('answer' => $question->defaultanswer));
         }
 
-
-        if (empty($options->readonly)) {
-            $answer = $responseoutput->response_area_input('answer', $qa,
-                $step, 12, $options->context);
-
-        } else {
-            $answer = $responseoutput->response_area_read_only('answer', $qa,
-                $step, 12, $options->context);
+        $palettes = $question->selectedpalettes;
+        if (empty($palettes)) {
+            $palettes = 'general;images;uml;er;bpmn;flowchart;basic';
         }
+
+         $answer = $responseoutput->response_area('answer', $qa,
+                $step, 12, $options->context, !empty($options->readonly),$palettes);
 
         $result = '';
         $result .= html_writer::tag('div', $question->format_questiontext($qa),
@@ -87,7 +85,7 @@ class qtype_diagram_renderer extends qtype_renderer
 class qtype_diagram_format_plain_renderer extends plugin_renderer_base
 {
 
-    protected function cmapdiv($id, $name, $response, $readonly)
+    protected function div($id, $name, $response, $readonly, $palettes)
     {
         global $CFG, $USER;
 
@@ -107,7 +105,7 @@ class qtype_diagram_format_plain_renderer extends plugin_renderer_base
         } else {
             //general, images, uml, er, bpmn, flowchart, basic, arrows2, ios, android, mscae, eip, mockups, clipart, pid2, signs, rack, electrical, aws2, cisco, cabinets, floowplan, bootstrap, gmdl, archimate and sysml
             //$answer .= '<iframe readonly="false" input="' . $id . '" id="diagram" frameborder="0" width="800" height="600" src="https://www.draw.io/?embed=1&proto=json&libs=uml;flowchart"></iframe>';
-            $answer .= '<iframe readonly="false" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $CFG->wwwroot . '/question/type/diagram/drawio/index.html?embed=1&proto=json&libs=uml;flowchart&dev=1"></iframe>';
+            $answer .= '<iframe readonly="false" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $CFG->wwwroot . '/question/type/diagram/drawio/index.html?embed=1&proto=json&libs=' . $palettes . '&dev=1"></iframe>';
         }
         return $answer;
     }
@@ -117,20 +115,13 @@ class qtype_diagram_format_plain_renderer extends plugin_renderer_base
         return 'qtype_diagram_plain';
     }
 
-    public function response_area_read_only($name, $qa, $step, $lines, $context)
+    public function response_area($name, $qa, $step, $lines, $context, $readonly, $palettes)
     {
         $inputname = $qa->get_qt_field_name($name);
         $id = $inputname . '_id';
 
-        return $this->cmapdiv($id, $inputname, $step->get_qt_var($name), true);
+        return $this->div($id, $inputname, $step->get_qt_var($name), $readonly, $palettes);
     }
 
-    public function response_area_input($name, $qa, $step, $lines, $context)
-    {
-        $inputname = $qa->get_qt_field_name($name);
-        $id = $inputname . '_id';
-
-        return $this->cmapdiv($id, $inputname, $step->get_qt_var($name), false);
-    }
 }
 

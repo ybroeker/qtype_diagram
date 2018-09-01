@@ -8,3 +8,6 @@ $string['pluginnameadding'] = 'Diagram-Frage hinzufügen';
 $string['pluginnameediting'] = 'Diagram-Frage bearbeiten';
 $string['graderinfo'] = 'Bewertungshinweise';
 $string['default_diagram'] = 'Default diagram';
+$string['selectedpalettes'] = 'Paletten';
+$string['selectedpalettes_help'] = 'Mögliche Werte: general, images, uml, er, bpmn, flowchart, basic, arrows2, ios, android, mscae, eip, mockups, clipart, pid2, signs, rack, electrical, aws2, cisco, cabinets, floorplan, bootstrap, gmdl, archimate und sysml.
+Können durch ; verknüpft werden';

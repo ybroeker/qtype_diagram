@@ -53,6 +53,7 @@ class qtype_diagram extends question_type
         $options->graderinfoformat = $formdata->graderinfo['format'];
 
         $options->defaultanswer = $formdata->defaultanswer;
+        $options->selectedpalettes = $formdata->selectedpalettes;
 
         $DB->update_record('qtype_diagram_options', $options);
     }
@@ -63,6 +64,7 @@ class qtype_diagram extends question_type
         $question->graderinfo = $questiondata->options->graderinfo;
         $question->graderinfoformat = $questiondata->options->graderinfoformat;
         $question->defaultanswer = $questiondata->options->defaultanswer;
+        $question->selectedpalettes = $questiondata->options->selectedpalettes;
     }
 
     /**
