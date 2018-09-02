@@ -98,14 +98,12 @@ class qtype_diagram_format_plain_renderer extends plugin_renderer_base
         $answer = '<script type="text/javascript" language="javascript" src="' . $CFG->wwwroot . '/question/type/diagram/script.js"></script>';
         $answer .= '<input type="hidden" id="' . $id . '" name="' . $name . '" value="' . $response . '">';
 
-
+        $url = $CFG->wwwroot . '/question/type/diagram/drawio/index.html';
+        //$url = https://www.draw.io
         if ($readonly) {
-            //$answer .= '<iframe readonly="true" input="' . $id . '" id="diagram" frameborder="0" _width="800" _height="600" src="https://www.draw.io/?embed=1&proto=json&chrome=0"></iframe>';
-            $answer .= '<iframe readonly="true" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $CFG->wwwroot . '/question/type/diagram/drawio/index.html?embed=1&proto=json&chrome=0&dev=1"></iframe>';
+            $answer .= '<iframe readonly="true" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '?embed=1&proto=json&chrome=0&dev=1"></iframe>';
         } else {
-            //general, images, uml, er, bpmn, flowchart, basic, arrows2, ios, android, mscae, eip, mockups, clipart, pid2, signs, rack, electrical, aws2, cisco, cabinets, floowplan, bootstrap, gmdl, archimate and sysml
-            //$answer .= '<iframe readonly="false" input="' . $id . '" id="diagram" frameborder="0" width="800" height="600" src="https://www.draw.io/?embed=1&proto=json&libs=uml;flowchart"></iframe>';
-            $answer .= '<iframe readonly="false" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $CFG->wwwroot . '/question/type/diagram/drawio/index.html?embed=1&proto=json&libs=' . $palettes . '&dev=1"></iframe>';
+            $answer .= '<iframe readonly="false" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '?embed=1&proto=json&libs=' . $palettes . '&dev=1"></iframe>';
         }
         return $answer;
     }
