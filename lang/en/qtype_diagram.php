@@ -11,4 +11,4 @@ $string['default_diagram'] = 'Default diagram';
 $string['selectedpalettes'] = 'Paletten';
 $string['selectedpalettes_help'] = 'Possible values: general, images, uml, er, bpmn, flowchart, basic, arrows2, ios, android, mscae, eip, mockups, clipart, pid2, signs, rack, electrical, aws2, cisco, cabinets, floorplan, bootstrap, gmdl, archimate and sysml.
 Können durch ; verknüpft werden';
-
+$string['privacy:metadata'] = 'The Diagram question type plugin does not store any personal data.';

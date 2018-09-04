@@ -1,26 +1,12 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
-//
-// Moodle is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Moodle is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Concept Map question renderer class.
+ * Diagram  question renderer class.
  *
  * @package    qtype
  * @subpackage diagram
- * @copyright  2011 Jorge Villalon
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright  2018 Yannick Bröker
+ * @license    https://www.apache.org/licenses/LICENSE-2.0 Apache License Version 2.0
  */
 
 
@@ -30,8 +16,8 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Generates the output for diagram questions.
  *
- * @copyright  2011 Jorge Villalon
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright  2018 Yannick Bröker
+ * @license    https://www.apache.org/licenses/LICENSE-2.0 Apache License Version 2.0
  */
 class qtype_diagram_renderer extends qtype_renderer
 {
@@ -98,13 +84,14 @@ class qtype_diagram_format_plain_renderer extends plugin_renderer_base
         $answer = '<script type="text/javascript" language="javascript" src="' . $CFG->wwwroot . '/question/type/diagram/script.js"></script>';
         $answer .= '<input type="hidden" id="' . $id . '" name="' . $name . '" value="' . $response . '">';
 
-        $url = $CFG->wwwroot . '/question/type/diagram/drawio/index.html';
-        //$url = https://www.draw.io
+        $url = $CFG->wwwroot . '/question/type/diagram/drawio/index.html?embed=1&dev=1&proto=json';
+        //$url = 'https://www.draw.io?embed=1&proto=json';
         if ($readonly) {
-            $answer .= '<iframe readonly="true" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '?embed=1&proto=json&chrome=0&dev=1"></iframe>';
+            $answer .= '<iframe readonly="true" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '&chrome=0"></iframe>';
         } else {
-            $answer .= '<iframe readonly="false" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '?embed=1&proto=json&libs=' . $palettes . '&dev=1"></iframe>';
+            $answer .= '<iframe readonly="false" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '&libs=' . $palettes . '"></iframe>';
         }
+
         return $answer;
     }
 

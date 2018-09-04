@@ -29,12 +29,15 @@ class qtype_diagram_edit_form extends question_edit_form
         //$mform->addElement('text', 'default_diagram_answer', "Antwort", array('size' => 7));
 
         $script = '<script type="text/javascript" language="javascript" src="' . $CFG->wwwroot . '/question/type/diagram/script.js"></script>';
-        $frame = '<iframe readonly="false" input="defaultanswer" id="diagram" frameborder="0" width="100%" height="600" src="' . $CFG->wwwroot . '/question/type/diagram/drawio/index.html?embed=1&proto=json&dev=1"></iframe>';
+
+        $url = $CFG->wwwroot . '/question/type/diagram/drawio/index.html?embed=1&dev=1&proto=json';
+        //$url = 'https://www.draw.io?embed=1&proto=json';
+
+        $frame = '<iframe readonly="false" input="defaultanswer" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '"></iframe>';
 
         $mform->addElement('html', $script);
         $mform->addElement('html', $frame);
-        $mform->addElement('hidden', 'defaultanswer', "Antwort",array('id'=>'defaultanswer'));
-        //$mform->addElement('text', 'defaultanswer', "Antwort", array('id'=>'defaultanswer'));
+        $mform->addElement('hidden', 'defaultanswer', "Antwort", array('id' => 'defaultanswer'));
         $mform->setType('defaultanswer', PARAM_RAW);
     }
 
