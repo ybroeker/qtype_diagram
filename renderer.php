@@ -87,9 +87,9 @@ class qtype_diagram_format_plain_renderer extends plugin_renderer_base
         $url = $CFG->wwwroot . '/question/type/diagram/drawio/index.html?embed=1&dev=1&proto=json';
         //$url = 'https://www.draw.io?embed=1&proto=json';
         if ($readonly) {
-            $answer .= '<iframe readonly="true" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '&chrome=0"></iframe>';
+            $answer .= '<iframe data-readonly="true" data-input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '&chrome=0"></iframe>';
         } else {
-            $answer .= '<iframe readonly="false" input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '&libs=' . $palettes . '"></iframe>';
+            $answer .= '<iframe data-readonly="false" data-input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '&libs=' . $palettes . '"></iframe>';
         }
 
         return $answer;

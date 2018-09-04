@@ -1,9 +1,9 @@
 function onMessage(evt) {
 
     let iframe = document.getElementById("diagram");
-    let answerId = iframe.getAttribute("input");
+    let answerId = iframe.getAttribute("data-input");
     let answerField = document.getElementById(answerId);
-    let readonly = JSON.parse(iframe.getAttribute("readonly"));
+    let readonly = JSON.parse(iframe.getAttribute("data-readonly"));
 
     if (evt.data.length > 0) {
         let msg = JSON.parse(evt.data);
