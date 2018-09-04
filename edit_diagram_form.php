@@ -37,7 +37,7 @@ class qtype_diagram_edit_form extends question_edit_form
 
         $mform->addElement('html', $script);
         $mform->addElement('html', $frame);
-        $mform->addElement('hidden', 'defaultanswer', "Antwort", array('id' => 'defaultanswer'));
+        $mform->addElement('hidden', 'defaultanswer', "", array('id' => 'defaultanswer'));
         $mform->setType('defaultanswer', PARAM_RAW);
     }
 
