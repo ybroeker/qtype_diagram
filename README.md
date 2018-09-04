@@ -13,7 +13,7 @@ Release notes
 
 1.0.0: First Version
 
-https://github.com/ybroeker/qtype_diagramreleases/tag/1.0.0
+https://github.com/ybroeker/qtype_diagram/releases/tag/1.0.0
 
 ## Note
 
