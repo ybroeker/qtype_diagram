@@ -13,7 +13,6 @@ class qtype_diagram_edit_form extends question_edit_form
     function definition_inner($mform)
     {
         global $CFG;
-        $qtype = question_bank::get_qtype('diagram');
 
         $mform->addElement('editor', 'graderinfo', get_string('graderinfo', 'qtype_diagram'),
             array('rows' => 10), $this->editoroptions);
@@ -25,9 +24,6 @@ class qtype_diagram_edit_form extends question_edit_form
         $mform->setDefault('selectedpalettes', 'general;images;uml;er;bpmn;flowchart;basic');
         $mform->addHelpButton('selectedpalettes', 'selectedpalettes', 'qtype_diagram');
         $mform->setType('selectedpalettes', PARAM_RAW);
-
-
-        //$mform->addElement('text', 'default_diagram_answer', "Antwort", array('size' => 7));
 
         $script = '<script type="text/javascript" language="javascript" src="' . $CFG->wwwroot . '/question/type/diagram/script.js"></script>';
 
