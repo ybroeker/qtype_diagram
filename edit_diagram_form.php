@@ -8,6 +8,7 @@ class qtype_diagram_edit_form extends question_edit_form
      * Add question-type specific form fields.
      *
      * @param MoodleQuickForm $mform the form being built.
+     * @throws coding_exception
      */
     function definition_inner($mform)
     {
