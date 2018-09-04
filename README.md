@@ -3,7 +3,7 @@
 Moodle Question type, which uses draw.io to draw diagrams as answers
 ------------------------------------------
 
-Version: 0.0.1
+Version: 1.0.0
 ------------------------------------------
 
 Author: Yannick Bröker (ybroeker@techfak.uni-bielefeld.de)
@@ -11,10 +11,19 @@ Author: Yannick Bröker (ybroeker@techfak.uni-bielefeld.de)
 Release notes
 -------------
 
-0.0.1: First (experimental) Version
+1.0.0: First Version
+
+https://github.com/ybroeker/qtype_diagramreleases/tag/1.0.0
 
 ## Note
 
 This question type release has been developed and tested for Moodle 3.5 and MariaDB 10.3. 
 
-## Introduction
+
+## Source Control
+
+https://github.com/ybroeker/qtype_diagram
+
+## Bug Tracker
+
+https://github.com/ybroeker/qtype_diagram/issues
