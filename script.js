@@ -16,8 +16,6 @@ function onMessage(evt) {
         } else if ((msg.event === 'autosave' || msg.event === 'save') && !readonly) {
             let data = btoa(msg.xml);
             answerField.setAttribute("value", data);
-        } else if (msg.event === 'export') {
-
         }
     }
 
