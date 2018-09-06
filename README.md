@@ -3,7 +3,7 @@
 Moodle Question type, which uses draw.io to draw diagrams as answers
 ------------------------------------------
 
-Version: 1.0.0
+Version: 1.0.1
 ------------------------------------------
 
 Author: Yannick Bröker (ybroeker@techfak.uni-bielefeld.de)
@@ -11,9 +11,16 @@ Author: Yannick Bröker (ybroeker@techfak.uni-bielefeld.de)
 Release notes
 -------------
 
-1.0.0: First Version
+
+
+#### 1.0.0: First Version
 
 https://github.com/ybroeker/qtype_diagram/releases/tag/1.0.0
+
+
+#### 1.0.1: Remove duplicated drawio from bundle
+
+https://github.com/ybroeker/qtype_diagram/releases/tag/1.0.1
 
 ## Note
 
