@@ -11,12 +11,7 @@ echo $VERSION
 
 rm -r qtype_diagram
 mkdir qtype_diagram
-cp -r db qtype_diagram/db
-cp -r lang qtype_diagram/lang
-cp -r pix qtype_diagram/pix
-cp -r drawio qtype_diagram/drawio
-cp -r drawio qtype_diagram/drawio
-cp -r classes qtype_diagram
+cp -r {db,lang,pix,drawio,classes} qtype_diagram
 cp {version,renderer,questiontype,question,lib,edit_diagram_form}.php  qtype_diagram
 cp LICENSE qtype_diagram
 cp README.md qtype_diagram

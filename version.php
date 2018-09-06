@@ -14,5 +14,5 @@ $plugin->component = 'qtype_diagram';
 $plugin->version  = @version@;
 $plugin->requires = 2012062506;
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.0.0';
+$plugin->release = '1.0.1';
 
