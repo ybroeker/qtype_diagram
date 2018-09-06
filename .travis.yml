@@ -1,0 +1,16 @@
+language: minimal
+
+script:
+  - git tag -l --format="%(creatordate:short)|%(refname:short)" | sort -r | grep -o 2018-09-04 | wc -l | sed 's/^ *//' > version
+  - ./build.sh
+
+
+deploy:
+  provider: releases
+  api_key:
+    secure: ae0EJ5qYi80j1KgbvFCo318fINx0ya4Jvld/6MpfF0KJ67Nb4ll+6XRi0ELL05ghbY4tjjeFgXxiSKQ68ncaroXkwMkVqbUU8vD9+4OSbp4wqQPl/d9Er2zG0UKD/8bExWzXj8jGVyGoyRIX7n/bkjIfkAtveOjsmUqR+FXJgrMyvcCVBV8HRIz/oLOuOPhr9D5Qon8fhdZqSnFL1Q7bSt08M8K7If6R7Paj4lHNtY71sreg6/1lM/dfbEbuYEmRAFFt1I/R7A7EFYm741euJ24ubU9kRgKZ4nYq8+OJ7oiqlsBt9S1x2OyxWihamPan2n+xjM/6ijRIfSIIeJWHU2lXZN0zdJ/6bFMtyHFT44bM4SkPxqqlXYOiDqtY03VfDWyI1b9Pf+mkmqpBFPh/XqdXQibmVx9d6M2GzrxeTpdb4qeifPijoHRy02tty/AVAmV4k4IiZbwgzMzPwudhCMur10MyRpu9E0sOWVVBdM6PFbBTsxeRi01NshNns37gjQGcnrUs7lFsXtZi10fheFEZaFuH+YK/AgDU4hwdiMgARb2E3PA1ndXVm36QRQVi1FzHJlDClbNIoGbDmuSWA8nz3xKxbd1c6t8RjEXPpOzbd/j/N7MQOgfS2tKXNBZT/ymkR/5iaeQ+HaZTUz9AJEZftDSnYlKQv0c8RKwgj8I=
+  file: qtype_diagram.*.zip
+  skip_cleanup: true
+  on:
+    repo: ybroeker/qtype_diagram
+    tags: true
