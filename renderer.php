@@ -40,8 +40,8 @@ class qtype_diagram_renderer extends qtype_renderer
             $palettes = 'general;images;uml;er;bpmn;flowchart;basic';
         }
 
-         $answer = $responseoutput->response_area('answer', $qa,
-                $step, 12, $options->context, !empty($options->readonly),$palettes);
+        $answer = $responseoutput->response_area('answer', $qa,
+            $step, 12, $options->context, !empty($options->readonly), $palettes);
 
         $result = '';
         $result .= html_writer::tag('div', $question->format_questiontext($qa),
@@ -87,9 +87,9 @@ class qtype_diagram_format_plain_renderer extends plugin_renderer_base
         $url = $CFG->wwwroot . '/question/type/diagram/drawio/index.html?embed=1&dev=1&proto=json';
         //$url = 'https://www.draw.io?embed=1&proto=json';
         if ($readonly) {
-            $answer .= '<iframe data-readonly="true" data-input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '&chrome=0"></iframe>';
+            $answer .= '<iframe data-readonly="true" data-input="' . $id . '" id="diagram" frameborder="0" style="width:100%; height: 90vh" src="' . $url . '&chrome=0"></iframe>';
         } else {
-            $answer .= '<iframe data-readonly="false" data-input="' . $id . '" id="diagram" frameborder="0" width="100%" height="600" src="' . $url . '&libs=' . $palettes . '"></iframe>';
+            $answer .= '<iframe data-readonly="false" data-input="' . $id . '" id="diagram" frameborder="0" style="width:100%; height: 90vh" src="' . $url . '&libs=' . $palettes . '"></iframe>';
         }
 
         return $answer;
