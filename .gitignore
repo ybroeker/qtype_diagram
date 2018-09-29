@@ -1,8 +1,10 @@
 #local test file
 test.html
 
-qtype_diagram
+diagram
 qtype_diagram_*.zip
+
+version
 
 # Created by https://www.gitignore.io/api/composer,intellij,macos,windows
 
