@@ -44,6 +44,7 @@ class qtype_diagram extends question_type
 
         $options->defaultanswer = $formdata->defaultanswer;
         $options->selectedpalettes = $formdata->selectedpalettes;
+        $options->customlibs = $formdata->customlibs;
 
         $DB->update_record('qtype_diagram_options', $options);
     }
@@ -55,6 +56,7 @@ class qtype_diagram extends question_type
         $question->graderinfoformat = $questiondata->options->graderinfoformat;
         $question->defaultanswer = $questiondata->options->defaultanswer;
         $question->selectedpalettes = $questiondata->options->selectedpalettes;
+        $question->customlibs = $questiondata->options->customlibs;
     }
 
     /**
@@ -89,7 +91,7 @@ class qtype_diagram extends question_type
      * @return mixed array as above, or null to tell the base class to do nothing.
      */
     public function extra_question_fields() {
-        return array('qtype_diagram_options','graderinfo','graderinfoformat','defaultanswer','selectedpalettes');
+        return array('qtype_diagram_options','graderinfo','graderinfoformat','defaultanswer','selectedpalettes','customlibs');
     }
 
 
@@ -110,7 +112,7 @@ class qtype_diagram extends question_type
         $qo->qtype = $question_type;
 
 
-        $extraquestionfields = array('defaultanswer','selectedpalettes');
+        $extraquestionfields = array('defaultanswer','selectedpalettes','customlibs');
         foreach ($extraquestionfields as $field) {
             $qo->$field = $format->getpath($data, array('#', $field, 0, '#'), '');
         }
@@ -155,7 +157,7 @@ class qtype_diagram extends question_type
         $expout='';
 
 
-        $extraquestionfields = array('defaultanswer','selectedpalettes');
+        $extraquestionfields = array('defaultanswer','selectedpalettes','customlibs');
         foreach ($extraquestionfields as $field) {
             $exportedvalue = $format->xml_escape($question->options->$field);
             $expout .= "    <{$field}>{$exportedvalue}</{$field}>\n";

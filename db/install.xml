@@ -10,7 +10,8 @@
         <FIELD NAME="graderinfo" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" COMMENT="Information shown to people with permission to manually grade the question, when they are grading." PREVIOUS="questionid" NEXT="graderinfoformat"/>
         <FIELD NAME="graderinfoformat" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" COMMENT="The text format for graderinfo." PREVIOUS="graderinfo" NEXT="defaultanswer"/>
         <FIELD NAME="defaultanswer" TYPE="text" LENGTH="medium" NOTNULL="false" SEQUENCE="false" COMMENT="The answer template" PREVIOUS="graderinfoformat" NEXT="selectedpalettes"/>
-        <FIELD NAME="selectedpalettes" TYPE="text" LENGTH="short" NOTNULL="false" SEQUENCE="false" COMMENT="The List of selected palettes" PREVIOUS="defaultanswer"/>
+        <FIELD NAME="selectedpalettes" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" COMMENT="The List of selected palettes" PREVIOUS="defaultanswer" NEXT="customlibs"/>
+        <FIELD NAME="customlibs" TYPE="text" LENGTH="small" NOTNULL="false" SEQUENCE="false" COMMENT="The List of custom libs" PREVIOUS="selectedpalettes"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id" NEXT="questionid"/>

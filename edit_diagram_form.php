@@ -20,10 +20,15 @@ class qtype_diagram_edit_form extends question_edit_form
 
         $mform->addElement('header', 'default_diagram_header', get_string('default_diagram', 'qtype_diagram'));
 
-        $mform->addElement('text', 'selectedpalettes', "Paletten");
+        $mform->addElement('text', 'selectedpalettes', "Paletten", array('size' => 100, 'maxlength' => 255));
         $mform->setDefault('selectedpalettes', 'general;images;uml;er;bpmn;flowchart;basic');
         $mform->addHelpButton('selectedpalettes', 'selectedpalettes', 'qtype_diagram');
         $mform->setType('selectedpalettes', PARAM_RAW);
+
+        $mform->addElement('text', 'customlibs', "Custom Libs", array('size' => 100, 'maxlength' => 255));
+        $mform->setDefault('customlibs', '');
+        $mform->addHelpButton('customlibs', 'customlibs', 'qtype_diagram');
+        $mform->setType('customlibs', PARAM_RAW);
 
         $script = '<script type="text/javascript" language="javascript" src="' . $CFG->wwwroot . '/question/type/diagram/script.js"></script>';
 
@@ -64,6 +69,7 @@ class qtype_diagram_edit_form extends question_edit_form
 
         $question->defaultanswer = $question->options->defaultanswer;
         $question->selectedpalettes = $question->options->selectedpalettes;
+        $question->customlibs = $question->options->customlibs;
 
 
         return $question;

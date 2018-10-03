@@ -16,5 +16,7 @@ $string['default_diagram'] = 'Diagramm-Einstellungen';
 $string['selectedpalettes'] = 'Paletten';
 $string['selectedpalettes_help'] = 'Erlaubt das Angeben der angezeigten Paletten.
 <br/>Mögliche Werte: general, images, uml, er, bpmn, flowchart, basic, arrows2, ios, android, mscae, eip, mockups, clipart, pid2, signs, rack, electrical, aws2, cisco, cabinets, floorplan, bootstrap, gmdl, archimate und sysml.
-<br/>Mehrere Angeben müssen durch ; getrennt werden.';
+<br/>Mehrere Angaben müssen durch ; getrennt werden.';
 $string['privacy:metadata'] = 'Der Diagram-Fragetyp-Plugin speichert keine persönlichen Daten.';
+$string['customlibs'] = 'Custom Libs';
+$string['customlibs_help'] = 'Custom Libs.<br/>Urls mit U-Prefix. Mehrere Angaben müssen durch ; getrennt werden.';

@@ -18,3 +18,5 @@ $string['selectedpalettes_help'] = 'Allows to specify the used palettes
 <br/>Possible values: general, images, uml, er, bpmn, flowchart, basic, arrows2, ios, android, mscae, eip, mockups, clipart, pid2, signs, rack, electrical, aws2, cisco, cabinets, floorplan, bootstrap, gmdl, archimate and sysml.
 <br/>Several entries must be separated by ;.';
 $string['privacy:metadata'] = 'The Diagram question type plugin does not store any personal data.';
+$string['customlibs'] = 'Custom Libs';
+$string['customlibs_help'] = 'Custom Libs.<br/>Urls with U-prefix, seperated by ;.';

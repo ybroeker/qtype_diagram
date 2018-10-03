@@ -41,7 +41,7 @@ class qtype_diagram_renderer extends qtype_renderer
         }
 
         $answer = $responseoutput->response_area('answer', $qa,
-            $step, 12, $options->context, !empty($options->readonly), $palettes);
+            $step, 12, $options->context, !empty($options->readonly), $palettes, $question->customlibs);
 
         $result = '';
         $result .= html_writer::tag('div', $question->format_questiontext($qa),
@@ -71,7 +71,7 @@ class qtype_diagram_renderer extends qtype_renderer
 class qtype_diagram_format_plain_renderer extends plugin_renderer_base
 {
 
-    protected function div($id, $name, $response, $readonly, $palettes)
+    protected function div($id, $name, $response, $readonly, $palettes,$customlibs)
     {
         global $CFG, $USER;
 
@@ -89,7 +89,7 @@ class qtype_diagram_format_plain_renderer extends plugin_renderer_base
         if ($readonly) {
             $answer .= '<iframe data-readonly="true" data-input="' . $id . '" id="diagram" frameborder="0" style="width:100%; height: 90vh" src="' . $url . '&chrome=0"></iframe>';
         } else {
-            $answer .= '<iframe data-readonly="false" data-input="' . $id . '" id="diagram" frameborder="0" style="width:100%; height: 90vh" src="' . $url . '&libs=' . $palettes . '"></iframe>';
+            $answer .= '<iframe data-readonly="false" data-input="' . $id . '" id="diagram" frameborder="0" style="width:100%; height: 90vh" src="' . $url . '&libs=' . $palettes . '&clibs='.$customlibs.'"></iframe>';
         }
 
         return $answer;
@@ -100,12 +100,12 @@ class qtype_diagram_format_plain_renderer extends plugin_renderer_base
         return 'qtype_diagram_plain';
     }
 
-    public function response_area($name, $qa, $step, $lines, $context, $readonly, $palettes)
+    public function response_area($name, $qa, $step, $lines, $context, $readonly, $palettes, $customlibs)
     {
         $inputname = $qa->get_qt_field_name($name);
         $id = $inputname . '_id';
 
-        return $this->div($id, $inputname, $step->get_qt_var($name), $readonly, $palettes);
+        return $this->div($id, $inputname, $step->get_qt_var($name), $readonly, $palettes, $customlibs);
     }
 
 }
